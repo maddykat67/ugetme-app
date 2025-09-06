@@ -12,7 +12,7 @@ from src.routes.matching import matching_bp
 from src.routes.groups import groups_bp
 
 app = Flask(__name__, static_folder=os.path.join(os.path.dirname(__file__), 'static'))
-app.config['SECRET_KEY'] = 'sames_secret_key_2024'
+app.config["SECRET_KEY"] = "ucme_secret_key_2024"
 
 # Enable CORS for all routes
 CORS(app, origins="*")
