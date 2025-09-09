@@ -22,15 +22,13 @@ jobs:
         node-version: '20'
 
     - name: Install dependencies
-      run: npm install
+      run: pnpm install
 
     - name: Build frontend
-      run: npm run build
+      run: pnpm run build
 
     - name: Deploy to Manus
-      run: | 
+      run: |
         manus deploy frontend --project-dir ./dist
       env:
         MANUS_API_KEY: ${{ secrets.MANUS_API_KEY }}
-
-
