@@ -31,3 +31,10 @@ jobs:
         manus deploy backend --project-dir .
       env:
         MANUS_API_KEY: ${{ secrets.MANUS_API_KEY }}
+
+
+    - name: Deploy to Manus
+      run: |
+        manus deploy backend --project-dir .
+      env:
+        MANUS_API_KEY: ${{ secrets.MANUS_API_KEY }}
