@@ -1,0 +1,131 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  --radius: 1.5rem;
+  --background: #000000;
+  --foreground: #ffffff;
+  --card: #1a1a1a;
+  --card-foreground: #ffffff;
+  --popover: #1a1a1a;
+  --popover-foreground: #ffffff;
+  --primary: #ff4444;
+  --primary-foreground: #ffffff;
+  --secondary: #00d4ff;
+  --secondary-foreground: #000000;
+  --muted: #2a2a2a;
+  --muted-foreground: #cccccc;
+  --accent: #00d4ff;
+  --accent-foreground: #000000;
+  --destructive: #ff4444;
+  --border: #333333;
+  --input: #2a2a2a;
+  --ring: #ff4444;
+  --chart-1: #ff4444;
+  --chart-2: #00d4ff;
+  --chart-3: #ffffff;
+  --chart-4: #cccccc;
+  --chart-5: #666666;
+  --sidebar: #000000;
+  --sidebar-foreground: #ffffff;
+  --sidebar-primary: #ff4444;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #00d4ff;
+  --sidebar-accent-foreground: #000000;
+  --sidebar-border: #333333;
+  --sidebar-ring: #ff4444;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground font-sans;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  }
+}
+
+@layer components {
+  .ugetme-logo {
+    font-family: 'Inter', sans-serif;
+    font-weight: 900;
+    font-size: 3rem;
+    letter-spacing: -0.05em;
+    background: linear-gradient(45deg, #ff4444, #00d4ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 0 20px rgba(255, 68, 68, 0.3);
+  }
+  
+  .btn-primary {
+    @apply bg-primary text-primary-foreground hover:bg-primary/90 rounded-full px-8 py-3 font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg;
+    box-shadow: 0 0 20px rgba(255, 68, 68, 0.3);
+  }
+  
+  .btn-secondary {
+    @apply bg-secondary text-secondary-foreground hover:bg-secondary/90 rounded-full px-8 py-3 font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg;
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+  }
+  
+  .card-ucme {
+    @apply bg-card border border-border rounded-3xl p-6 shadow-lg transition-all duration-300 hover:shadow-xl;
+    box-shadow: 0 4px 20px rgba(255, 68, 68, 0.1);
+  }
+  
+  .input-sames {
+    @apply bg-input border-2 border-border focus:border-primary rounded-full px-6 py-3 text-foreground placeholder:text-muted-foreground transition-all duration-300;
+  }
+  
+  .input-sames:focus {
+    box-shadow: 0 0 0 3px rgba(255, 68, 68, 0.1);
+  }
+}
+
+
+  .btn-signup {
+    @apply bg-secondary text-secondary-foreground hover:bg-secondary/90 rounded-full px-8 py-3 font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg;
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+  }
+
