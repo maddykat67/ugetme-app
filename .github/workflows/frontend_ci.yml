@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - branch-10
   pull_request:
     branches:
       - main
@@ -21,21 +22,14 @@ jobs:
       with:
         node-version: '20'
 
-    - name: Enable Corepack
-      run: corepack enable
+    - name: Install pnpm
+      run: npm install -g pnpm
 
     - name: Install dependencies
       run: pnpm install
 
     - name: Build frontend
       run: pnpm run build
-
-    - name: Deploy to Manus
-      run: |
-        manus deploy frontend --project-dir ./dist
-      env:
-        MANUS_API_KEY: ${{ secrets.MANUS_API_KEY }}
-
 
     - name: Deploy to Manus
       run: |
